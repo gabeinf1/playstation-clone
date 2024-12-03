@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sony-black-bar {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: right;
+    
+}
+
+.sony-logo {
+    width: 55px;
+    display: inline-block;
+    position: relative;
+
+}
+
+body {
+    background-color: gray;
+}
+
+
+.shared-nav-container {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    top: 18px;
+    left: 0;
+}
+
+
+
+.shared-image-loader-container {
+    top: 39px;
+    overflow: hidden;
+  
+}
+
+.astro-bot {
+    position: relative;
+    width: 100%;
+}
