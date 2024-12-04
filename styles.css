@@ -1,9 +1,11 @@
+/* Reset margin, padding, and set box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Make the black bar take the full width at the top */
 .sony-black-bar {
     background-color: black;
     position: fixed;
@@ -11,38 +13,46 @@
     top: 0;
     left: 0;
     text-align: right;
-    
+    z-index: 10; /* Keeps it on top of other elements */
 }
 
 .sony-logo {
     width: 55px;
     display: inline-block;
     position: relative;
-
 }
 
+/* Ensure body background is set */
 body {
     background-color: gray;
+    padding-top: 15px; /* To avoid the content being hidden under the fixed black bar */
 }
 
-
+/* Shared nav container should take full width */
 .shared-nav-container {
     position: relative;
     width: 100%;
     background-color: white;
-    top: 18px;
+    top: 0; /* Position it right below the black bar */
     left: 0;
 }
 
-
-
-.shared-image-loader-container {
-    top: 39px;
-    overflow: hidden;
-  
+/* Image section (fading images) */
+#fading-images-root {
+    position: relative;
+    top: 0; /* Make sure it's right below the navigation bar */
 }
 
-.astro-bot {
+/* Container for image loader (fading images) */
+.shared-image-loader-container {
     position: relative;
-    width: 100%;
+    overflow: hidden;
+    width: 100%; /* Ensure it takes full width */
+    height: 1000px;
+}
+
+.astro-bot, .horizon-adventures{
+    width: 100%; /* Ensure the image takes full width */
+    display: block; /* Prevent any extra space below the image */
+    position: absolute;
 }
