@@ -8,7 +8,7 @@
 /* Make the black bar take the full width at the top */
 .sony-black-bar {
     background-color: black;
-    position: fixed;
+    position: relative;
     width: 100%;
     top: 0;
     left: 0;
@@ -24,13 +24,12 @@
 
 /* Ensure body background is set */
 body {
-    background-color: gray;
-    padding-top: 15px; /* To avoid the content being hidden under the fixed black bar */
 }
 
 /* Shared nav container should take full width */
 .shared-nav-container {
-    position: relative;
+    display: inline-block;
+    position: sticky;
     width: 100%;
     background-color: white;
     top: 0; /* Position it right below the black bar */
@@ -55,4 +54,44 @@ body {
     width: 100%; /* Ensure the image takes full width */
     display: block; /* Prevent any extra space below the image */
     position: absolute;
+}
+
+.thumbnail-image-selectors {
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+
+.thumbnail-image-selectors, .mini-lego-horizons, .mini-astro-bot {
+    position: absolute;
+    height: 100px;
+    width: 180px;
+    display: inline-block;
+}
+
+.page-banner__content-wrapper {
+    position: relative;
+}
+
+.page-banner__content-wrapper, .page-banner-content {
+    position: absolute;
+    top: 150px;
+    left: 300px;
+    bottom: 100px;
+    scale: 50em;
+    color: white;
+}
+
+.page-banner__content-wrapper, .page-banner-content, h2{
+    padding-bottom: 20px;
+}
+
+.page-banner__content-wrapper, .page-banner-content, .horizon-logo {
+    height: 124pxx;
+    width: 526px;
+    padding-bottom: 50px;
+}
+
+.page-banner__content-wrapper, .page-banner-content, button {
+    
 }
