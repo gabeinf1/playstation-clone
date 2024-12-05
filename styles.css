@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font: arial;
 }
 
 /* Make the black bar take the full width at the top */
@@ -24,6 +25,9 @@
 
 /* Ensure body background is set */
 body {
+    font-family: "sst", Arial, sans-serif; /* Use their font stack */
+    line-height: 1.5; /* Match their spacing */
+    letter-spacing: 0; /* Match their letter spacing */
 }
 
 /* Shared nav container should take full width */
@@ -47,26 +51,13 @@ body {
     position: relative;
     overflow: hidden;
     width: 100%; /* Ensure it takes full width */
-    height: 1000px;
+    height: 700px;
 }
 
 .astro-bot, .horizon-adventures{
     width: 100%; /* Ensure the image takes full width */
     display: block; /* Prevent any extra space below the image */
     position: absolute;
-}
-
-.thumbnail-image-selectors {
-    width: 100%;
-    position: relative;
-    align-items: center;
-}
-
-.thumbnail-image-selectors, .mini-lego-horizons, .mini-astro-bot {
-    position: absolute;
-    height: 100px;
-    width: 180px;
-    display: inline-block;
 }
 
 .page-banner__content-wrapper {
@@ -84,14 +75,79 @@ body {
 
 .page-banner__content-wrapper, .page-banner-content, h2{
     padding-bottom: 20px;
+    height: 100px;
+    width: 340px;
 }
 
-.page-banner__content-wrapper, .page-banner-content, .horizon-logo {
+.page-banner__content-wrapper, .horizon-logo {
     height: 124pxx;
+    width: 400px;
+    padding-bottom: 50px;
+}
+
+
+.title-block, p {
+    height: 100px;
     width: 526px;
     padding-bottom: 50px;
 }
 
-.page-banner__content-wrapper, .page-banner-content, button {
-    
+.button-block {
+    position: absolute;
+    height: 30px;
+    width: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.button-block:hover {
+    outline: 1px solid white;
+    outline-offset: 2px;
+}
+
+a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.button .cta-inner span {
+    color: black;
+}
+
+/* Root container for images */
+.thumbnail-image-selectors-root {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;     /* Centers items vertically */
+    position: relative;      /* Allows further absolute positioning if needed */
+    top: 0px;
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+/* Thumbnail image container */
+.thumbnail-image-selectors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjust the space between images */
+}
+
+/* Styling for specific images */
+.mini-lego-horizons, .mini-astro-bot {
+    max-width: 10%;          /* Limit image width to 15% */
+    border-radius: 20px;      /* Make images circular */
+    display: block;          /* Prevent any extra space below images */
+}
+
+.mini-lego-horizons:hover, .mini-astro-bot:hover {
+    outline: 3px solid #2a56dd; /* Set the outline width and color */
+    outline-offset: 2px;  /* Spacing between the outline and image */
+    cursor: pointer;
 }
