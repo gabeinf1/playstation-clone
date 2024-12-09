@@ -6,29 +6,40 @@
     font: arial;
 }
 
-/* Make the black bar take the full width at the top */
-.sony-black-bar {
-    background-color: black;
-    position: relative;
-    width: 100%;
-    top: 0;
-    left: 0;
-    text-align: right;
-    z-index: 10; /* Keeps it on top of other elements */
-}
-
-.sony-logo {
-    width: 55px;
-    display: inline-block;
-    position: relative;
-}
-
 /* Ensure body background is set */
 body {
+    height: 100vh;
+    width: 100vw;
     font-family: "sst", Arial, sans-serif; /* Use their font stack */
     line-height: 1.5; /* Match their spacing */
     letter-spacing: 0; /* Match their letter spacing */
+    display: grid;
+    grid-template-rows: auto 1fr; /* Auto height for the top bar, remaining space for content */
+    grid-template-columns: 1fr;  /* Single-column layout */
+    margin: 0;
+    background-color: slateblue;
 }
+
+/* Make the black bar take the full width at the top */
+.sony-black-bar {
+    grid-row: 1; /* Place it in the first row */
+    background-color: black;
+    display: flex; /* Flexbox for aligning the logo */
+    align-items: center; /* Center the logo vertically */
+    justify-content: flex-end; /* Align the logo to the right */
+    height: 3em; /* Dynamic height */
+}
+
+.sony-logo {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: right;
+    width: 55px;
+    display: inline-block;
+    position: relative;
+    justify-items: end;
+}
+
 
 /* Shared nav container should take full width */
 .shared-nav-container {
@@ -83,6 +94,7 @@ body {
     height: 124pxx;
     width: 400px;
     padding-bottom: 50px;
+    z-index: 2;
 }
 
 
@@ -150,4 +162,10 @@ a {
     outline: 3px solid #2a56dd; /* Set the outline width and color */
     outline-offset: 2px;  /* Spacing between the outline and image */
     cursor: pointer;
+}
+
+.active-image {
+    z-index: 1;
+    opacity: 0;                /* Start as invisible */
+    transition: opacity 1s ease-in-out; /* Smooth transition with easing */
 }
